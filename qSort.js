@@ -1,29 +1,38 @@
-function QSort(arrToSort) {
-    this.a = arrToSort;
-    this.l = 0;
-    this.r = this.a.length - 1;
-    var _this = this;
-    this.sorting = function(l, r) {
-        this.i = l;
-        this.j = r;
-        this.pivotal = _this.a[Math.floor((this.i + this.j) / 2)];
-        this.swap = function(el_1, el_2) {
-            var tmp = _this.a[el_1];
-            _this.a[el_1] = _this.a[el_2];
-            _this.a[el_2] = tmp;
-        };
-        while(this.i < this.j) {
-            while(_this.a[this.i] < this.pivotal) {this.i++;}
-            while(_this.a[this.j] > this.pivotal) {this.j--;}
-            if(this.i <= this.j) {
-                this.swap(this.i++, this.j++);
-            }
-        }
-        if(l < this.i) {this.sorting(l, this.i);}
-        if(r > this.j) {this.sorting(this.j, r);}
+//To keep students data
+var globalStudents = [];
+
+//Global class
+function Students(name, age) {
+    this.name = name;
+    this.age = age;
+    
+    this.setStudData = function() {
+        var studObj = {name: this.name, age: this.age};
+        globalStudents.push(studObj);
     };
-    this.sorting(this.l, this.r);
-    console.log(this.a);
+    this.setStudData();
 }
 
-var toSort = new QSort([1, 6, 8, 9, 2, 0, 4, 3]);
+var studFirst = new Students('Vasya', 21);
+var studSec = new Students('Petya', 20);
+var studThird = new Students('Igor', 19);
+var studFourth = new Students('Vlad', 22);
+//Compare students by names
+globalStudents.sort(function toCompareNames(a ,b) {
+    if (a.name > b.name) {
+        return 1;
+    }
+    if (a.name < b.name) {
+        return -1;
+    }
+    return 0;
+});
+
+for (var i = 0; i < globalStudents.length; i++) {
+    console.log(globalStudents[i]);
+}
+
+//Object {name: "Igor", age: 19}
+//Object {name: "Petya", age: 20}
+//Object {name: "Vasya", age: 21}
+//Object {name: "Vlad", age: 22}
