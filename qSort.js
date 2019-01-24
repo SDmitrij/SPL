@@ -31,8 +31,3 @@ globalStudents.sort(function toCompareNames(a ,b) {
 for (var i = 0; i < globalStudents.length; i++) {
     console.log(globalStudents[i]);
 }
-
-//Object {name: "Igor", age: 19}
-//Object {name: "Petya", age: 20}
-//Object {name: "Vasya", age: 21}
-//Object {name: "Vlad", age: 22}
