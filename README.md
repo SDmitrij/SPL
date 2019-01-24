@@ -13,6 +13,14 @@
   <p>Object {cur_i: 9, cur_j: 1}</p>
   <p>Object {cur_i: 9, cur_j: 2}</p>
   <p>...</p>
+  <p>Object {cur_i: 6, cur_j: 3}</p>
+  <p>Object {cur_i: 6, cur_j: 4}</p>
+  <p>Object {cur_i: 6, cur_j: 5}</p>
+  <p>Object {cur_i: 6, cur_j: 6}</p>
+  <p>Object {cur_i: 5, cur_j: 6}</p>
+  <p>Object {cur_i: 4, cur_j: 6}</p>
+  <p>Object {cur_i: 3, cur_j: 6}</p>
+  <p>Object {cur_i: 3, cur_j: 5}</p>
   
 # 2)Task: Qsort with compare function
 <p>Sort objects of any class in user's order:</p>
